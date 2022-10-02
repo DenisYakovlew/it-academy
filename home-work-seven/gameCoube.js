@@ -17,22 +17,22 @@ function winnerCheck (gameMoves) {
     const totalFirstPlayer = gameMoves.filter(item => item.name === firstPlayerName).map(item => item.valueCoub).reduce((a, b) => a + b);
     const totalSecondPlayer = gameMoves.filter(item => item.name === secondPlayerName).map(item => item.valueCoub).reduce((a, b) => a + b);
     if (totalFirstPlayer > totalSecondPlayer) {
-        console.log(`Игрок "${firstPlayerName}" набрал ${totalFirstPlayer} и победил игрока "${secondPlayerName}"`)
+        console.log(`Игрок "${firstPlayerName}" набрал ${totalFirstPlayer} и победил игрока "${secondPlayerName}"`);
     }
     if (totalFirstPlayer === totalSecondPlayer) {
-        console.log(`Ничья! У ${firstPlayerName} и ${secondPlayerName} одинаковое колличество очков - ${totalFirstPlayer}`)
+        console.log(`Ничья! У ${firstPlayerName} и ${secondPlayerName} одинаковое колличество очков - ${totalFirstPlayer}`);
     }
     if (totalFirstPlayer < totalSecondPlayer) {
-        console.log(`Игрок "${secondPlayerName}" набрал ${totalSecondPlayer} и победил игрока "${firstPlayerName}"`)
+        console.log(`Игрок "${secondPlayerName}" набрал ${totalSecondPlayer} и победил игрока "${firstPlayerName}"`);
     } 
 }
 
 function printGameResult(gameMoves) {
     gameMoves.forEach(item => {
-	console.log(`Ходит игрок ${item.name} и получает цифру - ${item.valueCoub}`)
+	console.log(`Ходит игрок ${item.name} и получает цифру - ${item.valueCoub}`);
 });
 }
 
-gameProcess(moveCount)
-printGameResult(playerMoves)
+gameProcess(moveCount);
+printGameResult(playerMoves);
 winnerCheck(playerMoves);
