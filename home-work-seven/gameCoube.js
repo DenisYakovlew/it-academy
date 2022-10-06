@@ -8,8 +8,8 @@ let playerMove = (playerName) => { playerMoves.push({name: playerName, valueCoub
 
 function gameProcess(countIterations) {
     for (let i = 1; i <= countIterations; i++) {
-        playerMove(firstPlayerName, i);
-        playerMove(secondPlayerName, i);
+        playerMove(firstPlayerName);
+        playerMove(secondPlayerName);
     }
 }
 
