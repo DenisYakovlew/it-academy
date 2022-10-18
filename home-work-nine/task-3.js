@@ -3,27 +3,24 @@
 // Создайте async функцию, которая с помощью await будет дожидаться результата getNum1, 
 // затем будет дожидаться результата getNum2, а затем найдет сумму полученных чисел и выводит на экран.
 
-function getNum1 (min, max) {
-    const randomNumber = Math.ceil(Math.random() * (max - min) + min);
+let getRandomNumber = (min, max) => {return Math.ceil(Math.random() * (max - min) + min) }
+
+function getNum1 () {
     return new Promise((resolve, reject) => {
-        setTimeout(() => resolve(randomNumber), 3000);
+        setTimeout(() => resolve(getRandomNumber(1, 5)), 3000);
     })
 }
 
-function getNum2 (min, max) {
-    const randomNumber = Math.ceil(Math.random() * (max - min) + min);
+function getNum2 () {
     return new Promise((resolve, reject) => {
-        setTimeout(() => resolve(randomNumber), 5000);
+        setTimeout(() => resolve(getRandomNumber(6, 10)), 5000);
     })
 }
 
 async function result () {
     const firstFunction = await getNum1(1, 5);
     const secondFunction = await getNum2(6, 10);
-    return firstFunction + secondFunction;
+    console.log(firstFunction + secondFunction);
 }
 
-
-result().then(value => {
-    console.log(value);
-});
+result()
