@@ -11,9 +11,8 @@ function getNum () {
 }
 
 async function result() {
-    return `Число возведенное в квадрат из getNum ${Math.pow(await getNum(), 2)}`
+    let num = Math.pow(await getNum(), 2);
+    console.log(num);
 }
 
-result().then(data => {
-    console.log(data)
-})
+result()
