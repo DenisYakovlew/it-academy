@@ -4,9 +4,9 @@
 // затем возводить его в квадрат и выводить на экран.
 
 function getNum () {
-    const randomNumber = Math.ceil(Math.random() * 5);
+    const randomNumber = Math.ceil(Math.random() * (5 - 1) + 1);
     return new Promise((resolve, reject) => {
-        setTimeout(() => resolve(randomNumber), 3000)
+        setTimeout(() => resolve(randomNumber), 3000);
     })
 }
 
@@ -15,5 +15,5 @@ async function result() {
 }
 
 result().then(value => {
-    console.log(value)
+    console.log(value);
 });
